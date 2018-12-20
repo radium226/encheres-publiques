@@ -1,0 +1,10 @@
+http://www.encheres-publiques.com/annonces/vente-pavillon-le-blanc-mesnil-22694.html;PAVILLON;LE-BLANC-MESNIL;104000.0
+http://www.encheres-publiques.com/annonces/vente-pavillon-aubervilliers-22699.html;PAVILLON;AUBERVILLIERS;54000.0
+http://www.encheres-publiques.com/annonces/vente-appartement-epinay-sur-seine-22700.html;APPARTEMENT;EPINAY-SUR-SEINE;20000.0
+http://www.encheres-publiques.com/annonces/vente-box-epinay-sur-seine-22701.html;BOX;EPINAY-SUR-SEINE;6000.0
+http://www.encheres-publiques.com/annonces/vente-boxes-montreuil-22702.html;BOXES;MONTREUIL;5000.0
+http://www.encheres-publiques.com/annonces/vente-appartement-vaujours-22705.html;APPARTEMENT;VAUJOURS;95000.0
+http://www.encheres-publiques.com/annonces/vente-appartement-epinay-sur-seine-22722.html;APPARTEMENT;EPINAY-SUR-SEINE;70400.0
+http://www.encheres-publiques.com/annonces/vente-pavillon-groslay-22346.html;PAVILLON;GROSLAY;60000.0
+http://www.encheres-publiques.com/annonces/vente-studio-taverny-22461.html;STUDIO;TAVERNY;28000.0
+http://www.encheres-publiques.com/annonces/vente-pavillon-vemars-22742.html;PAVILLON;VEMARS;132000.0
