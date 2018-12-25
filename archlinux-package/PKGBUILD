@@ -1,8 +1,13 @@
-pkgname="encheres-publiques"
+pkgname="encheres-publiques-git"
 pkgver="1.0"
 pkgrel="1"
 
 arch=('any')
+
+makedepends=(
+  "scala"
+  "sbt"
+)
 
 depends=(
   "firefox"
@@ -14,13 +19,19 @@ depends=(
 )
 
 source=(
-  "encheres-publiques.jar"
+  "git+https://github.com/radium226/encheres-publiques.git"
   "usr_lib_systemd_system_encheres-publiques.service"
   "usr_lib_systemd_system_encheres-publiques.timer"
   "usr_lib_sysusers.d_encheres-publiques.conf"
   "usr_lib_tmpfiles.d_encheres-publiques.conf"
   "usr_bin_encheres-publiques"
 )
+
+build() {
+  cd "${pkgname%-git}/sources"
+  sbt assembly
+  cd -
+}
 
 package() {
   install -Dm0644 \

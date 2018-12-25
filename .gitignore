@@ -1,6 +1,8 @@
 /sources/target
 /sources/.idea
 /sources/project/target
-/sources/archlinux-package/src
-/sources/archlinux-package/pkg
+/archlinux-package/src
+/archlinux-package/pkg
+/archlinux-package/encheres-publiques
 /sources/.telegram-token
+

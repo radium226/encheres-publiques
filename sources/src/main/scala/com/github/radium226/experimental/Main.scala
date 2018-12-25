@@ -1,4 +1,4 @@
-package com.github.radium226.experimental
+/*package com.github.radium226.experimental
 
 import java.util.regex.Pattern
 
@@ -151,4 +151,4 @@ object Main extends App {
   }
 
 
-}
+}*/
