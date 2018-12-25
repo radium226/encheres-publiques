@@ -1,0 +1,29 @@
+---
+- name: install packages required for making package
+  yay:
+    name: "{{ item }}"
+    state: installed
+  loop:
+  - "base-devel"
+  - "git"
+
+- name: create working directory
+  file:
+    path: "/tmp/encheres-publiques"
+    state: directory
+
+- name: clone git repo
+  git:
+    repo: "https://github.com/radium226/encheres-publiques.git"
+    dest: "/tmp/encheres-publiques"
+
+- name: make and install package
+  shell:
+    cd "/tmp/encheres-publiques/archlinux-package"
+    makepkg \
+      --syncdeps \
+      --skipchecksums \
+      --noconfirm \
+      --clean \
+      --cleanbuild \
+      --install

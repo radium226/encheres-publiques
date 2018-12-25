@@ -5,4 +5,5 @@
 /archlinux-package/pkg
 /archlinux-package/encheres-publiques
 /sources/.telegram-token
+/archlinux-package/*.tar.xz
 
