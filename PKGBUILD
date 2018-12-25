@@ -35,7 +35,7 @@ build() {
 
 package() {
   install -Dm0644 \
-    "${pkgname%-git}/sources/target/scala-2.12/encheres-publiques-assembly-0.1-SNAPSHOT.jar" \
+    "${pkgname%-git}/target/scala-2.12/encheres-publiques-assembly-0.1-SNAPSHOT.jar" \
     "${pkgdir}/usr/share/java/encheres-publiques/encheres-publiques.jar"
 
   install -Dm0755 \
