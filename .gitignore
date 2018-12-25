@@ -1,6 +1,6 @@
 /sources/target
 /sources/.idea
 /sources/project/target
-/sources/src/main/makepkg/src
-/sources/src/main/makepkg/pkg
+/sources/archlinux-package/src
+/sources/archlinux-package/pkg
 /sources/.telegram-token
