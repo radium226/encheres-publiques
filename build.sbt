@@ -19,6 +19,6 @@ lazy val root = (project in file("."))
         val oldStrategy = (assemblyMergeStrategy in assembly).value
         oldStrategy(x)
     },
-    assembly / mainClass := Some("com.github.radium226.experimental.Main")
+    assembly / mainClass := Some("com.github.radium226.encherespubliques.CheckForNewSales")
   )
 
