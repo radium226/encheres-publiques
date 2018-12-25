@@ -11,12 +11,14 @@ lazy val root = (project in file("."))
     libraryDependencies += "com.bot4s" % "telegram-core_2.12" % "4.0.0-RC2",
     libraryDependencies += "io.tmos" %% "arm4s" % "1.1.0",
     libraryDependencies += "com.google.guava" % "guava" % "27.0.1-jre",
+    libraryDependencies += "com.github.scopt" %% "scopt" % "3.7.1",
+    libraryDependencies += "com.typesafe" % "config" % "1.3.3",
     assembly / assemblyMergeStrategy := {
       case "module-info.class" => MergeStrategy.discard
       case x =>
         val oldStrategy = (assemblyMergeStrategy in assembly).value
         oldStrategy(x)
     },
-    assembly / mainClass := Some("com.github.radium226.encherespubliques.CheckForNewSales")
+    assembly / mainClass := Some("com.github.radium226.experimental.Main")
   )
 

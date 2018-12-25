@@ -1,6 +1,6 @@
-/target
-/.idea
-/project/target
-/src/main/makepkg/src
-/src/main/makepkg/pkg
-/.telegram-token
+/sources/target
+/sources/.idea
+/sources/project/target
+/sources/src/main/makepkg/src
+/sources/src/main/makepkg/pkg
+/sources/.telegram-token
