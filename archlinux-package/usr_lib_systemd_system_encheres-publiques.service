@@ -1,8 +1,0 @@
-[Unit]
-Description=Enchères Publiques
-
-[Service]
-Type=oneshot
-User=encheres-publiques
-WorkingDirectory=~
-ExecStart=/usr/bin/encheres-publiques

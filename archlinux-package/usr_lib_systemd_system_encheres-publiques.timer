@@ -1,8 +1,0 @@
-[Unit]
-Description=Enchères Publiques
-
-[Timer]
-OnCalendar=00/2:30
-
-[Install]
-WantedBy=timers.target
