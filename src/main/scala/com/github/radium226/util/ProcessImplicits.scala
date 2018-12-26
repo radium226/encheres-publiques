@@ -5,14 +5,15 @@ trait ProcessImplicits {
   implicit class PimpedProcess(process: Process) {
 
     def pid: Int = {
-      process match {
+      process.pid().toInt
+      /*process match {
         case unixProcess if unixProcess.getClass.getName.equals("java.lang.UNIXProcess") =>
           val field = unixProcess.getClass.getDeclaredField("pid")
           field.setAccessible(true)
           field.getInt(unixProcess)
         case _ =>
           -1
-      }
+      }*/
     }
 
     def kill(signal: String): Unit = {
