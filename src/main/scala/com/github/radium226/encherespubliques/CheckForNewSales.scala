@@ -4,18 +4,19 @@ import cats.effect.IO
 import com.github.radium226.browsing.Browser
 
 import scala.concurrent._
-
 import com.github.radium226.Implicits._
-
+import com.typesafe.config.ConfigFactory
 import io.tmos.arm.ArmMethods._
 
 object CheckForNewSales extends App {
 
   implicit val timer = IO.timer(ExecutionContext.global)
 
+  implicit val config = ConfigFactory.load()
+
   import Interactions._
 
-  val token = ""
+  val token = config.getString("token")
 
   for (
     browser   <- manage(Browser.open());
