@@ -1,2 +1,2 @@
 #!/bin/sh
-exec java -jar "/usr/share/java/encheres-publiques/encheres-publiques.jar"
+exec java -jar "/usr/share/java/encheres-publiques/encheres-publiques.jar" -Dconfig.file="/etc/encheres-publiques.conf"
