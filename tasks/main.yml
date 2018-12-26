@@ -1,2 +1,9 @@
 ---
 - include: makepkg.yml
+- name: setup
+  copy:
+    content: |
+      token = {{ encheres_publiques_token }}
+    dest: "/etc/encheres-publiques.conf"
+    owner: "encheres-publiques"
+    mode: "u=rw,g=r,o="
