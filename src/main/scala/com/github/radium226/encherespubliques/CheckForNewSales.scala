@@ -1,5 +1,7 @@
 package com.github.radium226.encherespubliques
 
+import java.nio.file.Paths
+
 import cats.effect.IO
 import com.github.radium226.browsing.Browser
 
@@ -12,7 +14,7 @@ object CheckForNewSales extends App {
 
   implicit val timer = IO.timer(ExecutionContext.global)
 
-  implicit val config = ConfigFactory.load("/etc/encheres-publiques.conf")
+  implicit val config = ConfigFactory.parseFile(Paths.get("/etc/encheres-publiques.conf").toFile)
   println(config.root().render())
 
   import Interactions._
