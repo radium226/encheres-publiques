@@ -13,6 +13,7 @@ object CheckForNewSales extends App {
   implicit val timer = IO.timer(ExecutionContext.global)
 
   implicit val config = ConfigFactory.load("/etc/encheres-publiques.conf")
+  println(config.root().render())
 
   import Interactions._
 
