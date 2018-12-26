@@ -1,12 +1,4 @@
 ---
-- name: install packages required for making package
-  yay:
-    name: "{{ item }}"
-    state: installed
-  loop:
-  - "base-devel"
-  - "git"
-
 - name: create working directory
   file:
     path: "/tmp/encheres-publiques"
@@ -19,9 +11,10 @@
     dest: "/tmp/encheres-publiques"
 
 - name: make and install package
-  shell:
-    cd "/tmp/encheres-publiques/archlinux-package"
+  shell: |
+    cd "/tmp/encheres-publiques"
     makepkg \
+      --force \
       --syncdeps \
       --skipchecksums \
       --noconfirm \
