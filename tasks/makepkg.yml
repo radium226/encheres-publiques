@@ -1,8 +1,15 @@
 ---
+- name: delete old working directory
+  file:
+    path: "/tmp/encheres-publiques"
+    state: absent
+  changed_when: false
+
 - name: create working directory
   file:
     path: "/tmp/encheres-publiques"
     state: directory
+  changed_when: false
 
 - name: clone git repo
   git:
@@ -10,7 +17,7 @@
     version: "archlinux-package"
     dest: "/tmp/encheres-publiques"
 
-- name: make and install package
+- name: make package
   shell: |
     cd "/tmp/encheres-publiques"
     makepkg \
@@ -19,5 +26,8 @@
       --skipchecksums \
       --noconfirm \
       --clean \
-      --cleanbuild \
-      --install
+      --cleanbuild
+
+- name: install package
+  shell: |
+    find "/tmp/encheres-publiques" -name "*.tar.xz" | xargs -I {} yay -U "{}" --noconfirm
