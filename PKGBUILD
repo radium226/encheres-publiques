@@ -1,5 +1,5 @@
 pkgname="encheres-publiques-git"
-pkgver="1.0"
+pkgver=r18.6c09348
 pkgrel="1"
 
 arch=('any')
@@ -8,6 +8,11 @@ makedepends=(
   "scala"
   "sbt"
 )
+
+pkgver() {
+  cd "$pkgname"
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
 
 depends=(
   "firefox"
