@@ -2,4 +2,5 @@
 /.idea
 /project/target
 /.telegram-token
+/.private
 

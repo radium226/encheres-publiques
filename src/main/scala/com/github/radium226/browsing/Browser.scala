@@ -14,28 +14,31 @@ import scala.util.Try
 
 object Browser {
 
-  def managed(): ManagedResource[Browser] = {
-    manage(Browser.open())
+  def managed(headless: Boolean = true): ManagedResource[Browser] = {
+    manage(Browser.open(headless))
   }
 
-  def open(): Browser = {
+  def open(headless: Boolean = true): Browser = {
     implicit val display = Display.open()
 
     val firefoxProfile = new FirefoxProfile()
-    firefoxProfile.setPreference("permissions.default.image", 2)
+    if (headless) {
+      firefoxProfile.setPreference("permissions.default.image", 2)
+    }
 
     System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, "/dev/null")
 
     // Generate script with DISPLAY environment variable
     //FIXME
-    val scriptContent =
+    val scriptContent = if (headless) {
       s"""#!/bin/sh
          |DISPLAY=":${display.number}" exec firefox "$${@}"
         """.stripMargin
-    /*val scriptContent =
-    s"""#!/bin/sh
-       |exec firefox "$${@}"
-        """.stripMargin*/
+    } else {
+      s"""#!/bin/sh
+         |exec firefox "$${@}"
+        """.stripMargin
+    }
     val scriptFilePath = Files.createTempFile("firefox", ".sh")
     val printer = new PrintStream(Files.newOutputStream(scriptFilePath, StandardOpenOption.TRUNCATE_EXISTING))
     printer.println(scriptContent)
@@ -51,8 +54,10 @@ object Browser {
     val webDriver = new FirefoxDriver(firefoxOptions)
     val browser = new Browser(webDriver)
 
-    val firefoxWindow = Window(xdotool("search", "--onlyvisible", "--sync", "--name", "Firefox").head)
-    Window.maximize(firefoxWindow)
+    if (headless) {
+      val firefoxWindow = Window(xdotool("search", "--onlyvisible", "--sync", "--name", "Firefox").head)
+      Window.maximize(firefoxWindow)
+    }
 
     browser
   }

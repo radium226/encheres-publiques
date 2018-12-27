@@ -13,6 +13,7 @@ lazy val root = (project in file("."))
     libraryDependencies += "com.google.guava" % "guava" % "27.0.1-jre",
     libraryDependencies += "com.github.scopt" %% "scopt" % "3.7.1",
     libraryDependencies += "com.typesafe" % "config" % "1.3.3",
+    libraryDependencies += "com.iheart" %% "ficus" % "1.4.3", 
     assembly / assemblyMergeStrategy := {
       case "module-info.class" => MergeStrategy.discard
       case x =>

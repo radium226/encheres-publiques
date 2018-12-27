@@ -1,6 +1,6 @@
 package com.github.radium226.experimental
 
-/*import cats._
+import cats._
 import cats.data._
 import cats.effect._
 import cats.implicits._
@@ -69,4 +69,4 @@ object Experiment extends App {
           .unsafeRunSync()
             .foreach(println)
 
-}*/
+}
