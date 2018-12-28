@@ -5,7 +5,7 @@
   copy:
     content: |
       {
-        token: "{{ encheres_publiques_token }}"
+        token: "{{ encheres_publiques_telegram_token }}"
       }
     dest: "/etc/encheres-publiques.conf"
     owner: "encheres-publiques"
